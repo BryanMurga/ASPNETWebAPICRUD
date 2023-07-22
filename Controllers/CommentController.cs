@@ -16,6 +16,8 @@ namespace TestApi9A.Controllers
             _context = context;
         }
 
+        
+
         [HttpGet]
         public async Task<IActionResult> Index()
         {
@@ -82,18 +84,6 @@ namespace TestApi9A.Controllers
             await _context.SaveChangesAsync();
             return Ok();
         }
-
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            app.UseCors(builder =>
-                builder.AllowAnyOrigin()
-                       .AllowAnyHeader()
-                       .AllowAnyMethod());
-
-            // Resto de la configuración del middleware
-        }
-
-
 
     }
 
